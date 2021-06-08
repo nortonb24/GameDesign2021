@@ -1,4 +1,5 @@
 #Brenna Norton
+#6/3/2021
 # We are going to print a multiplication table for 2
 #Using print statements 
 #input --> variable is a container to keep data Neet and 
@@ -28,7 +29,8 @@ for i in range (1,11): #begining of range is included end of range is not
     print (i*base, end= "   ")
     #when we have several repetition then we can use several loops
     #sometimes they can be nested loops
-for var in range (2-11):
-        for i in range (1-11):
-            print (i*var, end= "   ")
+print()
+for var in range (2,11):
+    for i in range (1,11):
+        print (i*var, end= "   ")
     print ()
