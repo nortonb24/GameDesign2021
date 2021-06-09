@@ -6,15 +6,17 @@
 from typing import Text
 
 
-L1=('***********************')
-L2=('*       My Game       *')
-L3=('*        Menu         *')
-L4=('*      1.Level 1      *')
-L5=('*      2.Level 2      *')
-L6=('*      3.Level 3      *')
-L7=('*      4.Level 4      *')
-L8=('*      Exit game      *')
-L9=('***********************')
+L1=('***********************************')
+L2=('*       My Game                   *')
+L3=('*        Menu                     *')
+L4=('*      1.capitalize               *')
+L5=('*      2.uppercase                *')
+L6=('*      3.Lowercase                *')
+L7=('*      4.find the index of char   *')
+L8=('*      5.split                    *')
+L9=('*      6.translate                *')
+L10=('*     7. Exit                    *') 
+L11=('**********************************')
 def menu():
     print(L1)
     print(L2)
@@ -25,6 +27,8 @@ def menu():
     print(L7)
     print(L8)
     print(L9)
+    print(L10)
+    print(L11)
     inputNumber = input()
     x=int(inputNumber)
     return x
@@ -47,17 +51,28 @@ def score():
     print(L16)
     print(L17)
     print(L18)
+def pause():
+    print("Press enter to continue")
+    input()
 x=1
-print ('hello')
-print ('Goodbye')
 while x !=4: #loop is conditioned to an event 
     x=menu() #expecting a return value
     if x==1:
-        print("Level 1")
-        print("give me a phrase")
-        answer=input()
-        upper=answer.capitalize()
-        print(upper)
+        capitalize=True
+        while capitalize==True:
+            print("Level 1")
+            print("please enter a number 1-4")
+            answer=input()
+            print(answer.capitalize())#is a method of string you have to refer with 
+            print('do you want to convert another string?')
+            if (x==again):
+                print("please enter another phrase")
+                answer=input() #input is a function
+                print(answer.capitalize())#is a method of string you have to refer with 
+                answer=answer.capitalize() #update your variable to the change if you dont need original value
+                print(answer)
+                pause()
+            if(x==enter)
     if x==2:
         print ("Level 2")
     if x==3:
@@ -66,7 +81,3 @@ while x !=4: #loop is conditioned to an event
         print ("Level 4")
     if x==5:
         print ("Exit Game")
-print("Hi I am Brenna")
-lower=answer.casefold()
-print(lower)
-        
