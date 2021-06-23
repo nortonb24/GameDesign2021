@@ -17,10 +17,10 @@ gameWords= ['python','java','trackpad','computer','keyboard','geeks','laptop','h
 name =input("What is your name?")
 name=" "
 dt=datetime.datetime.now()
-score=0 #to total the number of wins
-file="BrennaGame.txt" 
+score=0 #will total the amount of wins
+#file="BrennaGame.txt" 
 linef=str(dt.month)+"/"+str(dt.day)+"/"+str(dt.year)+"\t"+dt.strftime("%A") 
-def menu (): #create menu to get choice
+def menu (): #to create a menu and define it
     print("*"*28) 
     print("*"," "*3,"Choice 1 - Play"," "*4,"*") 
     print("*"," "*3,"Choice 2 = Scores"," "*2,"*") 
@@ -42,16 +42,16 @@ def printScore():
     FileRead=open(file,'r') 
     print(FileRead.read()) 
     FileRead.close() 
-    #Open file as read and print the file 
+    #Open file, count it as read and close file 
 def updateScore(score): 
     FileWrite=open(file,'a') 
     line=name+"\t"+ linef+ "\t\t"+str(score) 
     FileWrite.write("\n"+ line) 
     FileWrite.close() 
-    #open the file and update the score list  
-    # date     NAme    score 
+    #will open the file and update the score 
+    # date, name and,score 
 #Start my main program 
-def PlayGame(answer, score):    #My function to play game 
+def PlayGame(answer, score):    #My function in order to play game 
     while "Y" in answer: 
         os.system('cls') 
         print("Good luck ", name, "!") 
@@ -99,8 +99,8 @@ while check:
         input("press enter when done") 
         os.system('cls') 
     elif "3" in varChoice: 
-        name=input("What is your name? ") 
+        name=input("What is your name?") 
     else: 
-        print("Thank you ! ") 
+        print("Thank you for playing!") 
         check=False 
     time.sleep(1)  
