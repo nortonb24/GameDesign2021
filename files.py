@@ -32,4 +32,3 @@ File=open("BrennaGame.txt", 'w')
 newline="\n \n what ever"
 File.write(newline)
 File.close()
-
