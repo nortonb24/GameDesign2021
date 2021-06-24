@@ -67,7 +67,7 @@ def PlayGame(answer, score):    #My function in order to play game
             #check that the new letter has not been used before 
             if newGuess not in guesses: 
                 if newGuess not in word: 
-                    turns -=1    #       turns = turns -1 
+                    turns -=1    #turns = turns -1 
                     print("Wrong! You have  ", turns, "guesses left") 
                 else: 
                     counter -=word.count(newGuess) #deleten repeated letters 
