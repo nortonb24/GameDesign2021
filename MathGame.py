@@ -3,7 +3,7 @@
 #My final project
 #Goal-to create a math game with a menu 
 import os, sys, time, random, math, datetime
-#Global Variables
+#Global Variables 
 file='MathGameScores.txt'
 score=0
 dt=datetime
@@ -12,25 +12,26 @@ dt=datetime
 os.system('cls')
 name= input("What is your name?")
 print(name)
+print("INSTRUCTIONS: To play this game, enter the level that you would like to play, try to get as many math problems correct as possible! The harder the level, the more questions you will get and the more points you will earn for each correct answer. Hopefully this will help you to improve your math skills! Enter 5 you want to see your scores and 6 when you are done playing the game! The game menu will appear shortly! ")
 print("Good Luck", name,)
-
+time.sleep(6)
 #to create and define a menu
-L1=  ("*************************************")
-L2=  ("*             Math Game             *")
-L3=  ("*               Menu                *")
-L4=  ("*     --------------------------    *")
-L5=  ("*      1. Level 1 Addition          *")
-L6=  ("*                                   *")
-L7=  ("*      2. Level 2 Subbtraction      *")
-L8=  ("*                                   *")
-L9=  ("*      3. Level 3 Multiplication    *")
-L10= ("*                                   *")
-L11= ("*      4. Level 4 Division          *")
-L12= ("*                                   *")
-L13= ("*      5. Scores                    *")
-L14= ("*                                   *")
-L15= ("*      6. Exit                      *")
-L16=(" *************************************")
+L1=  ("***************************************")
+L2=  ("**             Math Game             **")
+L3=  ("**               Menu                **")
+L4=  ("**     ---------------------------   **")
+L5=  ("**      1. Level 1 Addition          **")
+L6=  ("**                                   **")
+L7=  ("**      2. Level 2 Subbtraction      **")
+L8=  ("**                                   **")
+L9=  ("**      3. Level 3 Multiplication    **")
+L10= ("**                                   **")
+L11= ("**      4. Level 4 Division          **")
+L12= ("**                                   **")
+L13= ("**      5. Scores                    **")
+L14= ("**                                   **")
+L15= ("**      6. Exit                      **")
+L16= ("***************************************")
 def menu():
     print(L1)
     print(L2)
@@ -67,7 +68,7 @@ def printScore():
     FileRead.close()
 
 
-digits= [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,]
+digits= [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
 
 #to ask questions for each sign
 def Question(operator):
@@ -220,6 +221,6 @@ while x !=7: #loop is conditioned to an event
         input("press enter when you are done viewing scores") 
     if x==6:
         print(name, "Thank you for playing!!")
+        print("Play again soon!!")
         print("Goodbye:)")
         sys.exit()
-    
