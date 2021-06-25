@@ -2,13 +2,12 @@
 #6/22/2021
 #My final project
 #Goal-to create a math game with a menu 
-from datetime import datetime
-import os, sys, time, random, math
+import os, sys, time, random, math, datetime
 #Global Variables
 file='MathGameScores.txt'
 score=0
 dt=datetime
-#linef=str(dt.month)+"/"+str(dt.day)+"/"+str(dt.year)+"\t"+dt.strftime("%A")
+
  
 os.system('cls')
 name= input("What is your name?")
@@ -16,17 +15,22 @@ print(name)
 print("Good Luck", name,)
 
 #to create and define a menu
-L1= ("*************************************")
-L2= ("*             Math Game             *")
-L3= ("*               Menu                *")
-L4= ("*     --------------------------    *")
-L5= ("*      1. Level 1 Addition          *")
-L6= ("*      2. Level 2 Subbtraction      *")
-L7= ("*      3. Level 3 Multiplication    *")
-L8= ("*      4. Level 4 Division          *")
-L9= ("*      5. Scores                    *")
-L10=("*      6. Exit                      *")
-L11=("*************************************")
+L1=  ("*************************************")
+L2=  ("*             Math Game             *")
+L3=  ("*               Menu                *")
+L4=  ("*     --------------------------    *")
+L5=  ("*      1. Level 1 Addition          *")
+L6=  ("*                                   *")
+L7=  ("*      2. Level 2 Subbtraction      *")
+L8=  ("*                                   *")
+L9=  ("*      3. Level 3 Multiplication    *")
+L10= ("*                                   *")
+L11= ("*      4. Level 4 Division          *")
+L12= ("*                                   *")
+L13= ("*      5. Scores                    *")
+L14= ("*                                   *")
+L15= ("*      6. Exit                      *")
+L16=(" *************************************")
 def menu():
     print(L1)
     print(L2)
@@ -39,14 +43,22 @@ def menu():
     print(L9)
     print(L10)
     print(L11)
+    print(L12)
+    print(L13)
+    print(L14)
+    print(L15)
+    print(L16)
     print('Please Enter a selction 1-6')
     inputNumber=(int)(input())
     return inputNumber
 
 #score function
 def updateScore(score): 
-    FileWrite=open(file,'a') 
-    line=name+"\t"+ linef+ "\t\t"+str(score) 
+    FileWrite=open(file,'a')
+    dt=datetime 
+    #linef=str(dt.month)+"/"+str(dt.day)+"/"+str(dt.year)+"\t"+dt.strftime("%A")
+    #line=name+"\t"+ linef+ "\t\t"+str(score) 
+    line=name+"  "+str(score)
     FileWrite.write("\n"+ line) 
     FileWrite.close() 
 def printScore(): 
@@ -69,7 +81,7 @@ def Question(operator):
     if "*" in operator:
         sum= x*y
     if "/" in operator:
-        sum= x/y
+        sum= float (x/y)
     return sum
 
 #addition function to play game
@@ -87,10 +99,13 @@ def addition():
             score +=1
             turns -=1 #turns = turns -1
         else:
-            print("Sorry you missed")
+            print("Sorry you are incorrect")
             turns -=1
         if turns== 0:
             check=False
+            print("Your score is", score)
+            updateScore(score)
+            time.sleep(0.75)
 
  #subtraction function to play game           
 def subtraction():
@@ -107,11 +122,13 @@ def subtraction():
             score +=1
             turns -=1
         else:
-            print("Sorry you missed")
+            print("Sorry you are incorrect")
             turns -=1
         if turns== 0:
             check=False
             print("Your score is ", score)
+            updateScore(score)
+            time.sleep(0.75)
 
 #multiplication function to play game
 def multiplication():
@@ -128,11 +145,13 @@ def multiplication():
             score +=1
             turns -=1
         else:
-            print("Sorry you missed")
+            print("Sorry you are incorrect")
             turns -=1
         if turns== 0:
             check=False
             print("Your score is ", score)
+            updateScore(score)
+            time.sleep(0.75)
 
 #division function to play game
 def division():
@@ -143,17 +162,19 @@ def division():
     while check:
         operator= " / "
         sum = Question(operator)
-        answer=int(input())
-        if sum == answer:
+        answer=float(input())
+        if abs(sum - answer)<0.01:
             print("You are so smart !!")
             score +=1
             turns -=1
         else:
-            print("Sorry you missed")
+            print("Sorry you are incorrect")
             turns -=1
         if turns== 0:
             check=False
             print("Your score is ", score)
+            updateScore(score)
+            time.sleep(0.75)
           #update score file  
 #creating function for each level
 x=0
@@ -167,7 +188,7 @@ while x !=7: #loop is conditioned to an event
         time.sleep(1)
         addition()
         
-        #Addition=True
+        #Addition=True #yes
     
     if x==2: #Subtraction Game
         print("Level 2 Selected")
@@ -201,5 +222,4 @@ while x !=7: #loop is conditioned to an event
         print(name, "Thank you for playing!!")
         print("Goodbye:)")
         sys.exit()
-    time.sleep(1)
-
+    
